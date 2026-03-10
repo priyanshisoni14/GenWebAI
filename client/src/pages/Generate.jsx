@@ -1,6 +1,7 @@
 import { ArrowLeft } from 'lucide-react'
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+// eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react"
 import { useState } from 'react'
 import axios from "axios"
@@ -37,6 +38,7 @@ function Generate() {
 
     useEffect(() => {
         if (!loading) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setPhaseIndex(0)
             setProgress(0)
             return

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from "motion/react"
+import { AnimatePresence } from "motion/react"
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react"
 import LoginModal from '../components/LoginModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { Coins } from "lucide-react"

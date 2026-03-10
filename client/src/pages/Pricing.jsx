@@ -2,6 +2,7 @@ import { ArrowLeft, Check, Coins } from 'lucide-react';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+// eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react"
 import { useSelector } from 'react-redux';
 import axios from 'axios';
@@ -67,7 +68,13 @@ if(planKey=="free"){
 setLoading(planKey)
 try {
     const result=await axios.post(`${serverUrl}/api/billing`,{planType:planKey},{withCredentials:true})
-    window.location.href=result.data.sessionUrl
+const sessionUrl = result?.data?.sessionUrl
+
+if (sessionUrl) {
+  window.location.assign(sessionUrl)
+} else {
+  console.log("Session URL not received", result.data)
+}
 } catch (error) {
     console.log(error)
     setLoading(null)
